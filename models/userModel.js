@@ -5,7 +5,8 @@ module.exports = {
   getUserBy,
   getUserById,
   getUserByAuthId,
-  addUser
+  addUser,
+  updateUser
 };
 
 function addUser(user) {
@@ -37,8 +38,14 @@ function getUserById(id) {
     .first();
 }
 
-function getUserbyAuthId(id) {
+function getUserByAuthId(id) {
   return db("users")
     .where({AuthId: id})
     .first()
+}
+
+function updateUser(changes, id) {
+  return db("users")
+    .where({ id })
+    .update(changes);
 }
