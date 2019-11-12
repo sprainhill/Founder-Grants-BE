@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const admin = require("../models/adminModel.js");
+const admin = require("../models/moderatorModel.js");
 
 // ==========GET: get all grants==========
 router.get("/", (req, res) => {
@@ -81,7 +81,5 @@ router.delete("/suggestion/:id", (req, res) => {
         .json({ message: "There was an error removing the grant." });
     });
 });
-
-// ==========PUT: update a user role==========
 
 module.exports = router;
